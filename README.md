@@ -117,9 +117,36 @@ const PrimeNumbers: React.FC = () => {
 
 ## API
 
-### `useSsrCache(key: string): any`
+### `useSsrCache(key: string, options: { isWebPlatform: boolean }): any`
 
-A hook to retrieve cached data by key. If the data is not cached, it returns `null`.
+This hook retrieves cached data based on a specified `key`. If the data is not cached, it returns `null`.
+
+- **Parameters:**
+  - `key`: A unique string identifier for the cached data.
+  - `options`: An object containing configuration options.
+    - `isWebPlatform`: Boolean flag indicating if the platform is web (`true`) or not (`false`).
+
+**Usage Note:**
+If using in React Native and the platform is web-based (`Platform.OS === 'web'`), set `isWebPlatform` to `true` in the options object.
+
+Example:
+
+```typescript
+import { useSsrCache } from 'your-cache-library';
+
+const MyComponent = () => {
+  const cachedData = useSsrCache('myDataKey', { isWebPlatform: Platform.OS === 'web' });
+
+  // Use cachedData here...
+
+  return (
+    // JSX for your component
+  );
+};
+```
+
+This hook is particularly useful for efficiently managing server-side rendering (SSR) caches across different platforms.
+
 
 **Parameters:**
 - `key` (string): The key used to store and retrieve the cached data.
