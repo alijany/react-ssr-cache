@@ -5,7 +5,7 @@ interface SsrCacheProps<T> {
     name: string;
 }
 
-export const SsrCache = <T extends any>({ data, name }: SsrCacheProps<T>) => {
+export const SsrCache = <T = any>({ data, name }: SsrCacheProps<T>) => {
     return (
         <script
             type="application/json"

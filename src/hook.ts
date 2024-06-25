@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-export const useSsrCache = <T extends any>(name: string): T | undefined => {
+export const useSsrCache = <T = any>(name: string): T | undefined => {
     const dataObject = useMemo(() => {
         if (typeof window === 'undefined') {
             return undefined;
