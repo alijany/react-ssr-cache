@@ -153,11 +153,31 @@ This hook is particularly useful for efficiently managing server-side rendering 
 
 ### `<SsrCache data={data} name="key" />`
 
-A component to cache data during server-side rendering.
+A component designed to cache data during server-side rendering.
 
 **Props:**
-- `data` (any): The data to cache.
-- `name` (string): The key used to store the cached data.
+- `data` (`any`): The data to be cached.
+- `name` (`string`): The key used to store the cached data.
+- `isWebPlatform` (`boolean`, optional): Indicates if the platform is web-based (`true`) or not (`false`). This prop is useful when integrating with React Native and determining the platform environment.
+
+**Usage Note:**
+Ensure `name` is a unique identifier for the cached data.
+
+Example usage:
+
+```jsx
+import React from 'react';
+import SsrCache from 'your-ssr-cache-library';
+
+const MyComponent = ({ data }) => {
+  return (
+    <SsrCache data={data} name="uniqueKey" isWebPlatform={Platform.OS === 'web'} />
+    // Render your component content
+  );
+};
+```
+
+This component optimizes caching during SSR processes, enhancing performance and data accessibility.
 
 ## Contributing
 

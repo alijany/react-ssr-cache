@@ -3,9 +3,11 @@ import React from 'react';
 interface SsrCacheProps<T> {
     data: T;
     name: string;
+    isWebPlatform?: boolean
 }
 
-export const SsrCache = <T = any>({ data, name }: SsrCacheProps<T>) => {
+export const SsrCache = <T = any>({ data, name, isWebPlatform }: SsrCacheProps<T>) => {
+    if (isWebPlatform === false) return null
     return (
         <script
             type="application/json"
