@@ -126,6 +126,9 @@ This hook retrieves cached data based on a specified `key`. If the data is not c
   - `options`: An object containing configuration options.
     - `isWebPlatform`: Boolean flag indicating if the platform is web (`true`) or not (`false`).
 
+**Returns:**
+- The cached data if available, otherwise `null`.
+
 **Usage Note:**
 If using in React Native and the platform is web-based (`Platform.OS === 'web'`), set `isWebPlatform` to `true` in the options object.
 
@@ -147,12 +150,6 @@ const MyComponent = () => {
 
 This hook is particularly useful for efficiently managing server-side rendering (SSR) caches across different platforms.
 
-
-**Parameters:**
-- `key` (string): The key used to store and retrieve the cached data.
-
-**Returns:**
-- The cached data if available, otherwise `null`.
 
 ### `<SsrCache data={data} name="key" />`
 
