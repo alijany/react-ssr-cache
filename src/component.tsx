@@ -1,14 +1,16 @@
 import React from 'react';
 
+interface SsrCacheProps<T> {
+    data: T;
+    name: string;
+}
 
-export const SsrCache: React.FC<{ data: any; name: string }> = ({ data, name }) => {
+export const SsrCache = <T extends any>({ data, name }: SsrCacheProps<T>) => {
     return (
         <script
             type="application/json"
             dangerouslySetInnerHTML={{
-                __html: JSON.stringify(
-                    typeof window === undefined ? data : {},
-                ),
+                __html: JSON.stringify(typeof window === 'undefined' ? data : {}),
             }}
             id={name}
             suppressHydrationWarning
