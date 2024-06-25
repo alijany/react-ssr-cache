@@ -33,7 +33,7 @@ Here’s a basic example of how to use `SsrCache` component and `useSsrCache` ho
 
 ```jsx
 import React, { useEffect, useState } from 'react';
-import { useSsrCache, SsrCache } from 'ssr-cache';
+import { useSsrCache, SsrCache } from 'react-ssr-cache';
 
 const Comments: React.FC = () => {
   const cachedComments = useSsrCache('comments-data');
@@ -68,7 +68,7 @@ Here's an example of using `SsrCache` for caching the result of a heavy calculat
 
 ```jsx
 import React, { useEffect, useState } from 'react';
-import { useSsrCache, SsrCache } from 'ssr-cache';
+import { useSsrCache, SsrCache } from 'react-ssr-cache';
 
 const calculatePrimeNumbers = (limit) => {
   // Heavy calculation to find prime numbers up to a certain limit
