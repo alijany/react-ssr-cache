@@ -1,6 +1,6 @@
 # react-ssr-cache
 
-`react-ssr-cache` is a React library designed to optimize server-side rendering (SSR) by caching data on the server for reuse on the client side. This reduces the need for clients to refetch data, particularly for heavy computations or data fetching operations, improving performance and user experience. The library seamlessly detects the environment (server or client) and operates accordingly, eliminating the need for conditional rendering in your code.
+`react-ssr-cache` is a React library designed to optimize server-side rendering (SSR) by caching data on the server for reuse on the client side. This reduces the need for clients to refetch data, particularly for heavy computations or data fetching operations, improving performance and user experience. The library detects the environment (server or client) and operates accordingly, eliminating the need for conditional rendering in your code.
 
 ## Features
 
