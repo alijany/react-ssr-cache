@@ -19,7 +19,7 @@ export const useSsrCache = <T = any>(name: string, { isWebPlatform } = { isWebPl
             console.error('Failed to parse JSON data:', error);
             return undefined;
         }
-    }, [name]);
+    }, [name, isWebPlatform]);
 
     return dataObject;
 };
