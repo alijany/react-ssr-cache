@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 
-export const useSsrCache = <T = any>(name: string): T | undefined => {
+export const useSsrCache = <T = any>(name: string, { isWebPlatform } = { isWebPlatform: true }): T | undefined => {
     const dataObject = useMemo(() => {
-        if (typeof window === 'undefined') {
+        if (typeof window === 'undefined' || !isWebPlatform) {
             return undefined;
         }
         const scriptElement = document.getElementById(name);
