@@ -12,7 +12,7 @@ export const SsrCache = <T = any>({ data, name, isWebPlatform }: SsrCacheProps<T
         <script
             type="application/json"
             dangerouslySetInnerHTML={{
-                __html: JSON.stringify(typeof window === 'undefined' ? data : {}),
+                __html: JSON.stringify(typeof window === 'undefined' ? data : null),
             }}
             id={name}
             suppressHydrationWarning
